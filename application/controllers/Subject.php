@@ -26,7 +26,7 @@ class Subject extends CI_Controller
         $data['class_name']=function($class_id){
             $this->Crud->get_where('class_tbl', array('belongs_to_teacher'=>$this->user_id,'deleted'=>0));
         };
-        $data['subjects']= $this->Crud->get_where('subject', array('belongs_to_teacher'=>$this->user_id,'deleted'=>0));
+        $data['subjects']= $this->Crud->get_where('subject_tbl', array('belongs_to_teacher'=>$this->user_id,'deleted'=>0));
         $this->template->header('ClassBox | Manage Subjects', 'ClassBox Dashboard, Classroom management tool, management system', array('plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css'));
         $this->load->view('dashboard/nav');
         $this->load->view('dashboard/menu',$data);
